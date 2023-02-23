@@ -4,9 +4,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class Web33Application {
+public class Application {
 
     public static void main(String[] args) {
-        SpringApplication.run(Web33Application.class, args);
+        SpringApplication.run(Application.class, args);
     }
 }
