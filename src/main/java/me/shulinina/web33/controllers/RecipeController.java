@@ -6,6 +6,10 @@ package me.shulinina.web33.controllers;
 @RestController
 @RequestMapping("/recipe")
 public final class RecipeController {
+    @GetMapping("/")
+    public String helloWorld() {
+        return "Добро пожаловать!";
+    }
     private RecipeService recipeService;
 
     public RecipeController(RecipeService recipeService) {
