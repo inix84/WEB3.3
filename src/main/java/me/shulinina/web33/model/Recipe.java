@@ -5,9 +5,9 @@ import java.util.ArrayList;
 public class Recipe {
     private final String name;
     private final int cookingTime;
-    ArrayList<Ingredients> ingredient = new ArrayList<>();
+    private ArrayList<Ingredient> ingredient = new ArrayList<>();
     private ArrayList<Cooking> cookingStep = new ArrayList<>();
-    public Recipe(String name, int cookingTime, ArrayList<Ingredients> ingredient, ArrayList<Cooking> cookingStep) {
+    public Recipe(String name, int cookingTime, ArrayList<Ingredient> ingredient, ArrayList<Cooking> cookingStep) {
         this.name = name;
         this.cookingTime = cookingTime;
         this.ingredient = ingredient;
@@ -35,10 +35,10 @@ public class Recipe {
     public void setCookingStep(ArrayList<Cooking> cookingStep) {
         this.cookingStep = cookingStep;
     }
-    public ArrayList<Ingredients> getIngredient() {
+    public ArrayList<Ingredient> getIngredient() {
         return ingredient;
     }
-    public void setIngredient(ArrayList<Ingredients> ingredient) {
+    public void setIngredient(ArrayList<Ingredient> ingredient) {
         this.ingredient = ingredient;
     }
 }

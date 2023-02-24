@@ -2,23 +2,23 @@ package me.shulinina.web33.services.impl;
 import me.shulinina.web33.model.Recipe;
 import me.shulinina.web33.services.RecipeService;
 import org.springframework.stereotype.Service;
-import java.util.HashMap;
 import java.util.Map;
+import java.util.TreeMap;
 @Service
 public class RecipeServiceImpl implements RecipeService {
-    private static int Id = 0;
-    private final Map<Integer, Recipe> mapRecipe = new HashMap<>();
-
+    private static final Map<Long, Recipe> recipes = new TreeMap<>();
+    private static long lastId = 0;
     @Override
-    public void addRecipe(Recipe recipe) {       //метод добавление рецепта
-        mapRecipe.put(Id++, recipe);
+    public long addRecipe(Recipe recipe) {
+        recipes.put(lastId, recipe);
+        return lastId++;
     }
     @Override
-    public Recipe getRecipeById(int id) {       //метод получение рецепта
-        if (mapRecipe.containsKey(id)) {
-            return mapRecipe.get(id);
-        } else {
-            throw new RuntimeException("Не удалось получить рецепт");
-        }
+    public long getRecipe(Recipe recipe) {
+        return 0;
+    }
+    @Override
+    public Recipe getRecipe(long id) {
+        return recipes.get(id);
     }
 }

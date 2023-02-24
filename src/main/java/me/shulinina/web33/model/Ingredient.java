@@ -1,11 +1,9 @@
 package me.shulinina.web33.model;
-        import lombok.Data;
-@Data
-public class Ingredients {
+public class Ingredient {
     private final String nameIngredient;
     private final int  amountOfIngredient;     //ингредиенты
-    private final String unitOfMeasurement;    //Единица измерения
-    public Ingredients(String nameIngredient, int amountOfIngredient, String unitOfMeasurement) {
+    private final String unitOfMeasurement;    //единица измерения
+    public Ingredient(String nameIngredient, int amountOfIngredient, String unitOfMeasurement) {
         this.nameIngredient = nameIngredient;
         this.amountOfIngredient = amountOfIngredient;
         this.unitOfMeasurement = unitOfMeasurement;

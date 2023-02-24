@@ -5,22 +5,28 @@ package me.shulinina.web33.controller;
                import org.springframework.web.bind.annotation.*;
                import org.springframework.web.bind.annotation.RestController;
                import org.springframework.web.bind.annotation.GetMapping;
-               import org.springframework.web.bind.annotation.RequestParam;
                import org.springframework.web.bind.annotation.PostMapping;
 @RestController
-@RequestMapping("/recipe")
+@RequestMapping("/recipes")
 public class RecipeController {
-     private RecipeService recipeService;
+    private final RecipeService recipeService;
+
     public RecipeController(RecipeService recipeService) {
         this.recipeService = recipeService;
     }
-    @GetMapping("/get")
-    public ResponseEntity<Recipe> getRecipe(@RequestParam int id) {
-        return ResponseEntity.ok(recipeService.getRecipeById(id));
+   //Добавление нового рецепта
+         @PostMapping
+    public ResponseEntity<Long>addRecipe(@RequestBody Recipe recipe){
+        long id =  recipeService.addRecipe(recipe);
+        return ResponseEntity.ok(id);
     }
-    @PostMapping("/")
-    public ResponseEntity<Recipe> postRecipe(@RequestBody Recipe recipe){
-        recipeService.addRecipe(recipe);
+    //Получение рецепта
+         @GetMapping("/{id}")
+    public ResponseEntity<Recipe>getRecipeById(@PathVariable long id){
+        Recipe recipe = recipeService.getRecipe(id);
+        if (recipe==null){
+            return ResponseEntity.notFound().build();
+        }
         return ResponseEntity.ok(recipe);
     }
 }
