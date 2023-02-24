@@ -1,4 +1,4 @@
-package me.shulinina.web33.controllers;
+package me.shulinina.web33.controller;
                import me.shulinina.web33.model.Recipe;
                import me.shulinina.web33.services.RecipeService;
                import org.springframework.http.ResponseEntity;
@@ -7,7 +7,7 @@ package me.shulinina.web33.controllers;
                import org.springframework.web.bind.annotation.GetMapping;
                import org.springframework.web.bind.annotation.RequestParam;
                import org.springframework.web.bind.annotation.PostMapping;
-               @RestController
+@RestController
 @RequestMapping("/recipe")
 public class RecipeController {
      private RecipeService recipeService;

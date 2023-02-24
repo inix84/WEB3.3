@@ -1,4 +1,4 @@
-package me.shulinina.web33.controllers;
+package me.shulinina.web33.controller;
         import org.springframework.web.bind.annotation.GetMapping;
         import org.springframework.web.bind.annotation.RestController;
         import java.time.LocalDate;
