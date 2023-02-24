@@ -4,23 +4,23 @@ package me.shulinina.web33.model;
 public class Ingredients {
     private final String nameIngredient;
     private final int  amountOfIngredient;     //ингредиенты
-    private final String UnitOfMeasurement;    //Единица измерения
-    public Ingredients(String nameIngredient, int numberOfIngredient, String unitOfMeasurement) {
+    private final String unitOfMeasurement;    //Единица измерения
+    public Ingredients(String nameIngredient, int amountOfIngredient, String unitOfMeasurement) {
         this.nameIngredient = nameIngredient;
-        this.amountOfIngredient = numberOfIngredient;
-        UnitOfMeasurement = unitOfMeasurement;
+        this.amountOfIngredient = amountOfIngredient;
+        this.unitOfMeasurement = unitOfMeasurement;
     }
     @Override
     public String toString() {
-        return nameIngredient + amountOfIngredient + UnitOfMeasurement;
+        return nameIngredient + amountOfIngredient + unitOfMeasurement;
     }
     public String getNameIngredient() {
         return nameIngredient;
     }
-    public int getNumberOfIngredient() {
+    public int getAmountOfIngredient() {
         return amountOfIngredient;
     }
     public String getUnitOfMeasurement() {
-        return UnitOfMeasurement;
+        return unitOfMeasurement;
     }
 }
