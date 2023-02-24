@@ -14,15 +14,13 @@ public class RecipeController {
     public RecipeController(RecipeService recipeService) {
         this.recipeService = recipeService;
     }
-   //Добавление нового рецепта
          @PostMapping
-    public ResponseEntity<Long>addRecipe(@RequestBody Recipe recipe){
+    public ResponseEntity<Long>addRecipe(@RequestBody Recipe recipe){   //Добавление нового рецепта
         long id =  recipeService.addRecipe(recipe);
         return ResponseEntity.ok(id);
     }
-    //Получение рецепта
-         @GetMapping("/{id}")
-    public ResponseEntity<Recipe>getRecipeById(@PathVariable long id){
+            @GetMapping("/{id}")
+    public ResponseEntity<Recipe>getRecipeById(@PathVariable long id){ //Получение рецепта
         Recipe recipe = recipeService.getRecipe(id);
         if (recipe==null){
             return ResponseEntity.notFound().build();

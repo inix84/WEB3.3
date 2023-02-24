@@ -10,15 +10,13 @@ public class IngredientController {
     public IngredientController(IngredientService ingredientService) {
         this.ingredientService = ingredientService;
     }
-      //Добавление нового ингредиента
-         @PostMapping
-    public ResponseEntity<Long> addIngredient(@RequestBody Ingredient ingredient){
+             @PostMapping
+    public ResponseEntity<Long> addIngredient(@RequestBody Ingredient ingredient){  //Добавление нового ингредиента
         long id =  ingredientService.addIngredient(ingredient);
         return ResponseEntity.ok(id);
     }
-    //Получение ингредиента
-    @GetMapping("/{id}")
-    public ResponseEntity<Ingredient>getIngredientById(@PathVariable long id){
+      @GetMapping("/{id}")
+    public ResponseEntity<Ingredient>getIngredientById(@PathVariable long id){  //Получение ингредиента
         Ingredient ingredient = ingredientService.getIngredient(id);
         if (ingredient==null){
             return ResponseEntity.notFound().build();
